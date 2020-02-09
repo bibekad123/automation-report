@@ -8,7 +8,7 @@ setup(
   author = 'Bibek Adhikari',
   author_email = 'bbekad94@gmail.com',
   url = 'https://github.com/bibekad123/automation-report',
-  download_url = 'https://github.com/bibekad123/automation-report/archive/0.0.1.tar.gz',
+  download_url = 'https://github.com/bibekad123/automation-report/archive/0.0.2.tar.gz',
   keywords = ['automation report', 'report', 'automation'],  
   classifiers=[
     'Development Status :: 3 - Alpha',

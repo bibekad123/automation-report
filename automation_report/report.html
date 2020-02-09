@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Automation Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .case{
+            width: 100% !important;
+        }
+        .casestatus{
+            padding: 3px;
+            color: white;
+            font-size: 14px;
+            border-radius: 10px;
+        }
+        .PASS{
+            background-color: green
+        }
+        .table-success{
+            background-color: green !important;
+        }
+        .table-danger{
+            background-color: red;
+        }
+        .FAIL{
+            background-color: red
+        }
+        .Tests li{
+            list-style: none;
+            margin: 0;
+            background: #fdfdfd;
+            border: 1px solid #d2caca;
+            padding: 10px;
+            box-shadow: 2px 3px 5px grey;
+        }
+        .Tests li a.active{
+            font-weight: bold;
+        }
+        .case>table th:nth-child(1) {
+            width: 50px;
+        }
+        .case:nth-of-type(n+2) {
+            display: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1 class='text-center'> Automation Report</h1>
+    <div class="container-fluid">
+        <div class="col-sm-4 float-left">
+            <div class="Tests">
+                <h3>Test Cases</h3>
+                #testCaseLinks
+            </div>
+        </div>
+        <div class="col-sm-8 float-right testSteps">
+            #testCasecontent
+        </div>
+    </div>
+    <script>
+        $('.testname').on("click", function () {
+            var id = $(this).attr('id');
+            $('.active').removeClass('active')
+            $(this).addClass("active");
+            var anotherid = id + "Steps"
+            $('.case').css("display", "none")
+            $('#' + anotherid).css("display", "table")
+        });
+    </script>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 setup(
   name = 'automation-report',
   packages = ['automation_report'],
@@ -8,7 +8,7 @@ setup(
   author = 'Bibek Adhikari',
   author_email = 'bbekad94@gmail.com',
   url = 'https://github.com/bibekad123/automation-report',
-  download_url = '',
+  download_url = 'https://github.com/bibekad123/automation-report/archive/0.0.1.tar.gz',
   keywords = ['automation report', 'report', 'automation'],  
   classifiers=[
     'Development Status :: 3 - Alpha',

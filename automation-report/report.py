@@ -1,6 +1,7 @@
 from datetime import datetime
 import string
 import codecs
+import os
 testCaseLinks = ""
 testCasecontent = ""
 count = 0
@@ -46,7 +47,8 @@ def info(message):
 
 def close():
     global testCasecontent, testCaseLinks
-    report_file = codecs.open("report.html", 'r', 'utf-8')
+    __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+    report_file = codecs.open(os.path.join(__location__, 'report.html'), 'r', 'utf-8')
     allcontent = report_file.read()
     allcontent = allcontent.replace('#testCaseLinks', testCaseLinks)
     allcontent = allcontent.replace('#testCasecontent', testCasecontent)

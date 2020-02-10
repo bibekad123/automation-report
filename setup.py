@@ -1,14 +1,14 @@
 from setuptools import setup
 setup(
   name = 'automation-report',
-  packages = ['automation_report'],
-  version = '0.0.1',
+  packages = ['automation-report'],
+  version = '0.0.2',
   license='MIT',
   description = 'Simple report for your test automation including various cases/steps specifying its valid status.',
   author = 'Bibek Adhikari',
   author_email = 'bbekad94@gmail.com',
   url = 'https://github.com/bibekad123/automation-report',
-  download_url = 'https://github.com/bibekad123/automation-report/archive/0.0.2.tar.gz',
+  download_url = 'https://github.com/bibekad123/automation-report/archive/0.0.3.tar.gz',
   keywords = ['automation report', 'report', 'automation'],  
   classifiers=[
     'Development Status :: 3 - Alpha',

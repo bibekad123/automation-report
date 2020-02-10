@@ -22,7 +22,7 @@ def starttest(case_name):
     testCasecontent = testCasecontent + tableContent           
 
 
-def endtest(case_name):
+def endtest():
     global testCasecontent
     testCasecontent = testCasecontent + "\n </tbody>\n</table>\n</div>"
 

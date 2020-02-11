@@ -8,7 +8,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 setup(
   name = 'automation-report',
   packages = ['automation_report'],
-  version = '1.0.1',
+  version = '1.0.2',
   license='MIT',
   description = 'Simple report for your test automation including various cases/steps specifying its valid status.',
   author = 'Bibek Adhikari',

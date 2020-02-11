@@ -32,3 +32,7 @@ report.endtest()
 # User close method to finally complete whole report generation
 report.close()
 ```
+### Screenshots of report of above code
+![Automation Report](https://user-images.githubusercontent.com/12621555/74203965-7aabad00-4c99-11ea-9f9f-95323a5c0e63.png)
+
+![Automation report](https://user-images.githubusercontent.com/12621555/74203965-7aabad00-4c99-11ea-9f9f-95323a5c0e63.png)

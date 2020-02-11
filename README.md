@@ -35,4 +35,4 @@ report.close()
 ### Screenshots of report of above code
 ![Automation Report](https://user-images.githubusercontent.com/12621555/74203965-7aabad00-4c99-11ea-9f9f-95323a5c0e63.png)
 
-![Automation report](https://user-images.githubusercontent.com/12621555/74203965-7aabad00-4c99-11ea-9f9f-95323a5c0e63.png)
+![Automation report](https://user-images.githubusercontent.com/12621555/74203964-797a8000-4c99-11ea-8760-6c6e2691ab29.png)

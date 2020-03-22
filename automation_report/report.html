@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Automation Report</title>
+    <title>%headTitle%</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
@@ -13,6 +13,9 @@
             color: white;
             font-size: 14px;
             border-radius: 10px;
+        }
+        .casestatus b{
+            padding: 5px;
         }
         .PASS{
             background-color: green
@@ -43,21 +46,54 @@
         .case:nth-of-type(n+2) {
             display: none;
         }
+        .total_info{
+            padding: 10px;
+        }
+        .total_info span{
+            margin-right:10px;
+        }
+        .total_info span{
+            font-size: 18px;
+        }
+        .total_info span:nth-of-type(2) b{
+            color: green;
+        }
+        .total_info span:nth-of-type(3) b{
+            color: red;
+        }
+        h4, h1{
+            background: #00123e;
+            color: white;
+            font-weight: 600;
+        }
+        h4{
+            padding: 5px;
+            font-size: 16px;
+        }
+        h1{
+            padding: 20px;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <h1 class='text-center'> Automation Report</h1>
+    <div class="total_info text-center">
+        <span>Total Cases: <b>%totalCases%</b> </span>
+        <span>Passed Cases: <b>%passedCases%</b> </span>
+        <span>Failed Cases: <b>%failedCases%</b> </span>
+    </div>
     <div class="container-fluid">
         <div class="col-sm-4 float-left">
             <div class="Tests">
-                <h3>Test Cases</h3>
-                #testCaseLinks
+                <h4 class="text-center">Test Cases</h4>
+                %testCaseLinks%
             </div>
         </div>
         <div class="col-sm-8 float-right testSteps">
-            #testCasecontent
+            <h4 class="text-center">Cases Steps</h4>
+            %testCasecontent%
         </div>
     </div>
     <script>

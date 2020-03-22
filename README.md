@@ -37,6 +37,6 @@ new_report.endtest()
 new_report.close()
 ```
 ### Screenshots of report of above code
-![Automation Report](https://user-images.githubusercontent.com/12621555/74203965-7aabad00-4c99-11ea-9f9f-95323a5c0e63.png)
+![Automation Report](https://user-images.githubusercontent.com/12621555/77243942-c3129f00-6c37-11ea-8e2d-3d4195133bfa.png)
 
-![Automation report](https://user-images.githubusercontent.com/12621555/74203964-797a8000-4c99-11ea-8760-6c6e2691ab29.png)
+![Automation report](https://user-images.githubusercontent.com/12621555/77243945-d3c31500-6c37-11ea-9eaa-67236010b9e5.png)

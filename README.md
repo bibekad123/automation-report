@@ -22,7 +22,6 @@ new_report.starttest("CASE 0001: Test the screen")
 # Populate the various steps status with info(), success(), fail() methods for particular case
 new_report.info("Page is opened")
 new_report.success("Login Successfully")
-new_report.endtest()
 
 # End above started case
 new_report.endtest()

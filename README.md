@@ -33,7 +33,8 @@ new_report.info("User is logged in")
 new_report.success("Logout link is present")
 new_report.fail("User not logged out")
 new_report.endtest()
-# User close method to finally complete whole report generation
+
+# Use close method to finally complete whole report generation
 new_report.close()
 ```
 ### Screenshots of report of above code

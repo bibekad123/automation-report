@@ -3,6 +3,7 @@ import string
 import codecs
 import os
 
+
 class AutomationReport:
     testCaseLinks = ""
     testCasecontent = ""
@@ -14,21 +15,22 @@ class AutomationReport:
     total_fail = 0
     fail_case = False
 
-    def __init__(self, report_name):
+    def __init__(self, report_name, options={}):
         self.report_name = report_name
         self.report_file = open((self.report_name + ".html"), "w+")
+        self.options = options
 
     def starttest(self, case_name):
         self.fail_case = 0
         self.case_count = self.case_count + 1
         active_class = ""
         if self.case_count == 1:
-            active_class = 'active' 
+            active_class = 'active'
         self.testCaseLinks = self.testCaseLinks + \
-            "<li> <a href='#' class='testname %s' id='Test%s'>%s</a> - <span class='PASS casestatus status-%s'><i><b>PASS</b> </i></span></li>" % (
-                active_class, self.case_count, case_name, self.case_count)
+            "<li class='testname " + \
+             active_class + "' id='Test" + str(self.case_count) + "'> <span class='PASS casestatus status-" + str(self.case_count) + "'>PASS</span> <span class ='casename' title='"+ case_name +  "'>" + case_name + "</span></li>"
         self.testCasecontent = self.testCasecontent + \
-            "<div id='Test%sSteps' class='case'>" % self.case_count
+            "<div id='Test%sSteps' class='case table-responsive'>" % self.case_count
         tableContent = """<table class="table table-hover table-bordered">
                         <thead>
                             <th>Status</th>
@@ -48,9 +50,9 @@ class AutomationReport:
 
     def fail(self, message):
         self.fail_case = True
-        self.testCaseLinks = self.testCaseLinks.replace(\
-            "'PASS casestatus status-"+ str(self.case_count) + "'><i><b>PASS",\
-            "'FAIL casestatus status-"+ str(self.case_count) + "'><i><b>FAIL")
+        self.testCaseLinks = self.testCaseLinks.replace(
+            "'PASS casestatus status-" + str(self.case_count) + "'>PASS",
+            "'FAIL casestatus status-" + str(self.case_count) + "'>FAIL")
         self.testCasecontent = self.testCasecontent + \
             "<tr class='table-danger'><td><i><b>FAIL</b></i></td><td> %s </td></tr>\n" % message
 
@@ -65,11 +67,28 @@ class AutomationReport:
             __location__, 'report.html'), 'r', 'utf-8')
         allcontent = source_report_file.read()
         allcontent = allcontent.replace('%testCaseLinks%', self.testCaseLinks)
-        allcontent = allcontent.replace('%testCasecontent%', self.testCasecontent)
-        allcontent = allcontent.replace('%headTitle%', self.report_name + " | Automation Report")
+        allcontent = allcontent.replace(
+            '%testCasecontent%', self.testCasecontent)
+        allcontent = allcontent.replace(
+            '%headTitle%', self.report_name + " | automation-report")
         allcontent = allcontent.replace('%totalCases%', str(self.case_count))
-        allcontent = allcontent.replace('%passedCases%', str(self.case_count - self.total_fail))
+        total_pass = self.case_count - self.total_fail
+        allcontent = allcontent.replace(
+            '%passedCases%', str(total_pass))
         allcontent = allcontent.replace('%failedCases%', str(self.total_fail))
+        passedPercent = (total_pass / self.case_count) * 100
+        allcontent = allcontent.replace(
+            '%passedPercent%', str(round(passedPercent,2)) + "%")
+        # Changing according to options
+        if "LogoImage" in self.options:
+            allcontent = allcontent.replace('%mainHeader%', "<img src=" + self.options['LogoImage'] +" height='80'/>")
+        if "MainHeader" in self.options:
+            allcontent = allcontent.replace('%mainHeader%', self.options["MainHeader"])
+        else:
+            allcontent = allcontent.replace('%mainHeader%', "Automation Report")
+        if "FooterContent" in self.options:
+            allcontent = allcontent.replace('%footerContent%', self.options["FooterContent"])
+        else:
+            allcontent = allcontent.replace('%footerContent%', "")
         self.report_file.write(allcontent)
         self.report_file.close()
-

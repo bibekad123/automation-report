@@ -8,13 +8,13 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 setup(
   name = 'automation-report',
   packages = ['automation_report'],
-  version = '1.0.5',
+  version = '1.1.0',
   license='MIT',
-  description = 'Simple report for your test automation including various cases/steps specifying its valid status.',
+  description = 'Generate HTML report four test cases / Automation cases including multiple casess with its steps specifying its valid status.',
   author = 'Bibek Adhikari',
   author_email = 'bbekad94@gmail.com',
   url = 'https://github.com/bibekad123/automation-report',
-  download_url = 'https://github.com/bibekad123/automation-report/archive/1.0.3.tar.gz',
+  download_url = 'https://github.com/bibekad123/automation-report/archive/1.1.0.tar.gz',
   keywords = ['automation report', 'report', 'automation'],  
   classifiers=[
     'Development Status :: 5 - Production/Stable',

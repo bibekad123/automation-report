@@ -1,2 +1,2 @@
 include README.md LICENSE
-include automation_report/*
+include automation_report/html_source/*

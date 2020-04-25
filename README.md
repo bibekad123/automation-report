@@ -15,7 +15,6 @@ $ pip install automation-report
 ### Code Example
 
 ###### Importing package :
-#
 ```
 from automation_report.report import AutomationReport
 ```
@@ -30,32 +29,27 @@ options["MainHeader"] = "Automation Report"
 options["FooterContent"] = "<a href='#'> Footer link </a>" 
 ```
  
-##### Create new object for your first test with Report name and optional "options" dictionary
-#
+##### Create new object for your first test with Report name and optional options dictionary
 ```
 new_report = AutomationReport("Login Test", options)
 ```
-##### Use **starttest()** method to start a new case with its name given as parameter
-#
+##### Use starttest() method to start a new case with its name given as parameter
 ```
 new_report.starttest("CASE 0001: Login to the system")
 ```
 
 ##### Populate the various steps status with info(), success(), fail() methods for particular case
-#
 ```
 new_report.info("Entered email in email field")
 new_report.success("Login Successfully:")
 ```
 
 ##### End above started case
-#
 ```
 new_report.endtest()
 ```
 
 ##### Create yet another case as following
-#
 ```
 new_report.starttest("CASE 0002: Logout User")
 new_report.info("User is logged in")
@@ -64,7 +58,6 @@ new_report.fail("User not logged out")
 new_report.endtest()
 ```
 ##### Use close method to finally complete whole report generation
-#
 ```
 new_report.close()
 ```

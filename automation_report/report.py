@@ -3,12 +3,10 @@ import string
 import codecs
 import os
 
-
 class AutomationReport:
     testCaseLinks = ""
     testCasecontent = ""
     now = datetime.now()
-    report_name = "report" + now.strftime("%m%d%Y%H%M%S")
     report_file = None
     case_count = 0
     total_pass = 0
@@ -64,7 +62,7 @@ class AutomationReport:
         __location__ = os.path.realpath(os.path.join(
             os.getcwd(), os.path.dirname(__file__)))
         source_report_file = codecs.open(os.path.join(
-            __location__, 'report.html'), 'r', 'utf-8')
+            __location__, 'html_source/report.html'), 'r', 'utf-8')
         allcontent = source_report_file.read()
         allcontent = allcontent.replace('%testCaseLinks%', self.testCaseLinks)
         allcontent = allcontent.replace(
@@ -79,6 +77,7 @@ class AutomationReport:
         passedPercent = (total_pass / self.case_count) * 100
         allcontent = allcontent.replace(
             '%passedPercent%', str(round(passedPercent,2)) + "%")
+        
         # Changing according to options
         if "LogoImage" in self.options:
             allcontent = allcontent.replace('%mainHeader%', "<img src=" + self.options['LogoImage'] +" height='80'/>")

@@ -1,0 +1,159 @@
+a:active, a:focus {
+    outline: 0;
+    border: none;
+}
+.main_content{
+    min-height: 545px;
+}
+.casestatus{
+    padding: 5px;
+    color: white;
+    font-size: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+    font-weight: 800;
+    min-width: 35px;
+    display: inline-block;
+    text-align: center;
+}
+.casename{
+    margin-left: -5px;
+}
+thead{
+    line-height: 0.6;
+    text-align: center;
+}
+tbody{
+    font-size: 14px;
+}
+td,th{
+    border-color: #c2cac2 !important;
+    border-width: 2px !important;
+    padding: 0.5rem !important;
+}
+td:nth-of-type(2){
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    word-break: break-word;
+    hyphens: auto;
+}
+.casestatus b{
+    padding: 5px;
+}
+.PASS{
+    background-color: green;
+}
+.table-success td{
+    background-color: #5cf47f;
+}
+.table-info td{
+    background-color: #3ddbf2; 
+}
+.table-danger td{
+    background-color: #ff0000d4;
+}
+.FAIL{
+    background-color: red;
+}
+.Tests li{
+    list-style: none;
+    margin: 0;
+    background-color: #f1f1f1;
+    border: 1px solid #d2caca;
+    padding: 6px;
+    box-shadow: 2px 3px 5px grey;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    font-size: 14px;
+    transition: 0.2s;
+}
+.Tests li a{
+    color: #353333;
+}
+.Tests li:hover{
+    background-color: #ddd;
+    cursor: pointer;
+}
+.Tests li.active{
+    background-color: #ccc;
+}
+.case>table th:nth-child(1) {
+    width: 50px;
+}
+/* Except first one */
+.case:nth-of-type(n+2) {
+    display: none;
+}
+.total_info{
+    padding: 10px;
+}
+.total_info span{
+    margin-right:10px;
+}
+.total_info span{
+    font-size: 18px;
+}
+.total_info span:nth-of-type(2) b{
+    color: green;
+}
+.total_info span:nth-of-type(3) b{
+    color: red;
+}
+h4, h1{
+    background: #00123e;
+    color: white;
+    font-weight: 600;
+}
+h1 a{
+    color: white;
+}
+h4{
+    padding: 5px;
+    font-size: 16px;
+}
+h1 a:hover{
+    text-decoration: none;
+    color: white;
+}
+h1{
+    padding: 20px;
+}
+.col-sm-4, .col-sm-8{
+    padding-left: 0px !important;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.col-sm-8{
+    padding-right: 0px !important;
+}
+footer{
+    background: #00123e;
+    clear: both;
+    margin-top: 20px;
+}
+.my-contents{
+    text-align: right;
+    color: white;
+    padding-bottom: 1px;
+}
+.footer-links{
+    padding: 10px;
+}
+.my-contents a, .footer-links a{
+    color: white;
+}
+.my-contents a:hover, .footer-links a:hover{
+    color: white;
+    text-decoration: none;
+}
+.charts{
+    width: 175px !important;
+    height: 175px !important;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}

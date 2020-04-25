@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<head>
+    <title>%headTitle%</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="main_content">
+        <header class="text-center">
+            <h1><a href="/"> %mainHeader%</h1></a>
+        </header>
+
+        <div class="total_info text-center">
+            <div class="charts">
+                <canvas id="myChart" width="175" height="175"></canvas>
+            </div>
+    
+            <span>Total Cases: <b>%totalCases%</b> </span>
+            <span>Passed Cases: <b>%passedCases%</b> </span>
+            <span>Failed Cases: <b>%failedCases%</b> </span>
+            <span>Pass Percentage: <b>%passedPercent%</b></span>
+        </div>
+    
+        <div class="container-fluid">
+            <div class="col-sm-4 float-left">
+                <div class="Tests">
+                    <h4 class="text-center">Test Cases</h4>
+                    %testCaseLinks%
+                </div>
+            </div>
+            <div class="col-sm-8 float-right testSteps">
+                <h4 class="text-center">Cases Steps</h4>
+                %testCasecontent%
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container container-fluid">
+            <div class="footer-links text-center">
+                %footerContent%
+            </div>
+            <div class="my-contents">
+                <p>Report generated using <a href="https://github.com/bibekad123/automation-report" target="_blank"><u><b>automation-report</b></u></a></p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        $('.testname').on("click", function () {
+            var id = $(this).attr('id');
+            $('.active').removeClass('active')
+            $(this).addClass("active");
+            var anotherid = id + "Steps"
+            $('.case').css("display", "none")
+            $('#' + anotherid).css("display", "table")
+        });
+
+    </script>
+    <script>
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Pass', 'Fail'],
+                datasets: [{
+                    data: [%passedCases%, %failedCases%],
+                    backgroundColor: [
+                        'rgba(0, 128, 0, 1)',
+                        'rgba(255, 0, 0, 1)'
+                    ],
+                    borderColor: [
+                        'rgba(0, 128, 0, 0.8)',
+                        'rgba(255, 0, 0, 0.8)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+            }
+        });
+        </script>
+</body>
+
+</html>

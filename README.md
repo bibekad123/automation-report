@@ -1,4 +1,5 @@
 # automation-report
+[![Downloads](https://pepy.tech/badge/automation-report)](https://pepy.tech/project/automation-report)
 
 Python package to generate HTML report of your automation or test cases with:
 
